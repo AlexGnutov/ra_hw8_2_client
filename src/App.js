@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import TestComponent from "./components/test-component";
+import LoaderComponent from "./components/loader-component";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TestComponent url={process.env.REACT_APP_HOST_URL + 'data'}/>
+      <TestComponent url={process.env.REACT_APP_HOST_URL +  'error'}/>
+      <TestComponent url={process.env.REACT_APP_HOST_URL + 'loading'}/>
+      <LoaderComponent/>
     </div>
   );
 }
